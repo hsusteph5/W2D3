@@ -1,0 +1,28 @@
+* {
+  background-color: #ececec
+}
+
+body {
+  font-family: Arial, san-serif
+}
+
+h1, h2 {
+  font-size: 38px
+}
+
+.ingredients-list {
+  list-style-type: square;
+}
+
+ol.directions-list {
+  list-style-type: circle;
+}
+
+header > img {
+  width: 100px
+}
+
+li a {
+  text-decoration: none;
+  color: inherit
+}
