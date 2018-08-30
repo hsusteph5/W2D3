@@ -41,14 +41,13 @@ describe "TowersOfHanoi" do
 #move should be able to move from one pile and put it into another
 #check if the move is valid? if the next tower has a larger disk
   describe "#move" do
-    # before(:each) do
-    #   towersofhanoi = TowersOfHanoi.new
-    # end
-    # it "prompt the user to choose a pile to move the disks from" do
-    #   expect("").to include("to move from?")
-    # end
+    before(:each) do
+      towersofhanoi.towers[0] = [1, 2, 3]
+    end
+
     it "checks if the move was made" do
-      expect(towersofhanoi.move)
+      expect(towersofhanoi.move).to receive(:valid_move?)
+      towersofhanoi.move
     end
 
     it "moves the piece from one tower to the next" do

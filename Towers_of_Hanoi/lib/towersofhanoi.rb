@@ -24,10 +24,23 @@ class TowersOfHanoi
 
   def move
     until won?
-      
+      puts "Choose a tower to move from?"
+      from = gets.chomp
+      puts "Choose a tower to move to?"
+      to = gets.chomp
+      if valid_move?(from, to)
+        self.towers[to] << self.towers[from].shift
+      end
+      p self.towers
     end
   end
 
   def won?
+    if self.towers[0].empty?
+      return true if self.towers[1] == [1,2,3]
+      return true if self.towers[2] == [1,2,3]
+    else
+      return false
+    end
   end
 end
